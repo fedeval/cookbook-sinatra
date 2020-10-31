@@ -23,17 +23,13 @@ get '/new' do
   erb :new
 end
 
-post '/database/recipes' do
+post '/database/recipes/create' do
   recipe = Recipe.new(params[:name], params[:description], params[:rating], params[:prep_time])
   cookbook.add_recipe(recipe)
-  @cookbook = cookbook
-  erb :index
+  redirect '/'
 end
 
-delete '/database/recipes' do
-  erb :new
+get '/database/recipes/:id/delete' do
+  cookbook.remove_recipe(params[:id].to_i + 1)
+  redirect '/'
 end
-# get '/team/:username' do
-#   puts params[:username]
-#   "The username is #{params[:username]}"
-# end

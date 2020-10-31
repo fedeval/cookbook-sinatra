@@ -1,6 +1,9 @@
-<% @cookbook.all.each do |recipe| %>
+<% @cookbook.all.each_with_index do |recipe, index| %>
   <li>
-    <%= recipe.name %> 
+    <%= "#{index + 1} - #{recipe.name}" %> 
+    <a href="/database/recipes/<%= index %>/delete">
+    	<input class="btn btn-link btn-sm" type="button" value= "Delete">
+    </a>
   </li>
 <% end %>
 
