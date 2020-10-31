@@ -29,6 +29,10 @@ post '/database/recipes' do
   @cookbook = cookbook
   erb :index
 end
+
+delete '/database/recipes' do
+  erb :new
+end
 # get '/team/:username' do
 #   puts params[:username]
 #   "The username is #{params[:username]}"
