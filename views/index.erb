@@ -1,11 +1,7 @@
-<p>
-  I'm in a <em>view</em>!
-</p>
-
-<%= Time.now %>
-
-<% @usernames.each do |username| %>
+<% @cookbook.all.each do |recipe| %>
   <li>
-    <%= username %>
+    <%= recipe.name %>
   </li>
 <% end %>
+
+<a href="/new">Add a new recipe<a>

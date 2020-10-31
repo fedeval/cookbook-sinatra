@@ -1,5 +1,5 @@
 require 'csv'
-require_relative 'recipe'
+require_relative '../models/recipe'
 
 class Cookbook
   def initialize(csv_file_path)
@@ -10,7 +10,7 @@ class Cookbook
 
   def all
     # Returns all the recipe
-    return @recipes
+    @recipes
   end
 
   def add_recipe(recipe)
